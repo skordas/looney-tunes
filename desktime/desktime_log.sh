@@ -6,7 +6,8 @@ while :; do
   log_time=$(date +%Y:%m:%d:%H:%M:%S)
   file_name=$(date +%Y%m%d)
   log_file=$log_directory/$file_name.log
-  locked=$(loginctl show-session 1 | grep IdleHint | cut -d "=" -f 2)
+  # TODO Get correct session numer.
+  locked=$(loginctl show-session 2 | grep IdleHint | cut -d "=" -f 2)
 
   if [[ "$locked" == "no" ]]; then
   	wm_name=$(xprop -id $(xprop -root _NET_ACTIVE_WINDOW | awk '{print $5}') WM_NAME)
