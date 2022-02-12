@@ -150,6 +150,12 @@ function generate_time_per_project_report() {
 }
 
 function generate_daily_distribution_report() {
+  echo -e "<div class=\"day-row\">"
+  echo -e "  <div class=\"inline day-row-day\"></div>"
+  echo -e "  <div class=\"inline\">"
+  echo -e "    <div class=\"first-top-hour\">0:00</div><div class=\"top-hour\">2:00</div><div class=\"top-hour\">04:00</div><div class=\"top-hour\">06:00</div><div class=\"top-hour\">08:00</div><div class=\"top-hour\">10:00</div><div class=\"top-hour\">12:00</div><div class=\"top-hour\">14:00</div><div class=\"top-hour\">16:00</div><div class=\"top-hour\">18:00</div><div class=\"top-hour\">20:00</div><div class=\"top-hour\">22:00</div>"
+  echo -e "  </div>"
+  echo -e "</div>"
   echo -e "<div class=\"time-graph\">"
   for i in ${!time_activity[@]}
   do
@@ -175,7 +181,7 @@ cat > $report_file <<- EOM
       .bar-box {border-radius: 2px; height: 20px; margin-top: 1px}
       .pomodoro-info {visibility: hidden; position: absolute; top: 8px; left: 8px; font-size: 10px; padding: 5px; color: #f0f0f0}
       .bar-box:hover .pomodoro-info {visibility: visible}
-      .time-graph {width: 1440px; margin-left: 155px}
+      .time-graph {width: 1440px; margin-left: 153px}
       .time-bar {width: 1px; background-color: #666666; margin-left: 0px; margin-right: 0px; min-height: 1px}
       .project-name {vertical-align: middle}
       .project-time-bar {color: #f0f0f0; text-align: right; font-size: 10px; border-radius: 5px; padding-right: 5px; padding-top: 4px; padding-bottom: 4px; margin-top: 2px; margin-bottom: 2px}
