@@ -109,10 +109,13 @@ function do_pomodoro() {
     if [[ "$stop_timer" == "true" ]] && [[ "$stop_pomodoro" == "true" ]]
     then
       echo ""
-      read -p "s will stop pomodoro, rest for changing the project" anwser
+      read -p "s will restart pomodoro, x will exit, rest for changing the project" anwser
       if [[ "$anwser" == "s" ]]
       then
         break
+      elif [[ "$anwser" == "x" ]]
+      then
+        exit 0
       else
         stop_pomodoro=false
       fi
@@ -138,7 +141,8 @@ function do_break() {
 
   send_notification $break_type
   echo -e $green$break_name$reset
-  read -p ""
+  # TODO - make it as condition
+  # read -p ""
   countdown $break_time
 }
 
